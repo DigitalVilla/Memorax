@@ -1,0 +1,33 @@
+
+:root {
+    /* COLORS */
+    --colorMain: #eb2f64;
+    --colorLight: #FF3366;
+    --colorDark: #BA265D;
+    --light1: #faf9f9;
+    --light2: #f4f2f2;
+    --light3: #f0eeee;
+    --light4: #ccc;
+    --dark1: #333;
+    --dark2: #777;
+    --dark3: #999;
+    --dark4: #2e2e2e;
+    
+    /*Shadows*/
+    --shadow1: 0 1rem 2rem rgba(0, 0, 0, .3);
+    --shadow2: 0 2rem 4rem rgba(0, 0, 0, .4);
+    --shadow3: 0 3rem 6rem rgba(0, 0, 0, .5);
+
+    //Grid 
+    --grid-width:100%;
+    --gap-V:2rem;
+    --gap-H:3rem;
+    
+    //Media Break Points
+    --BP1:850px;
+    --BP2:660px;
+    --BP3:590px;
+    
+    // Desktop
+    --BP1x: 1200px;
+}
