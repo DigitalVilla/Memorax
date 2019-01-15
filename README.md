@@ -1,4 +1,4 @@
-# MEMORAX a Memory Game
+# Match.io a Memory Matching Game
 ###  JS/HTML game with a flat UI design to challenge your memory
 With dynamic animation and responsive DOM creation.
 #### Technologies
