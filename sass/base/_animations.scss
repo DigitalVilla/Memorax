@@ -4,7 +4,7 @@
         animation: return .2s cubic-bezier(0.19, 1, 0.22, 1);
     }
     100% {
-        transform: rotateY(180deg);
+        transform: rotateY(360deg);
         animation: turn .2s cubic-bezier(0.19, 1, 0.22, 1);
     }
 }

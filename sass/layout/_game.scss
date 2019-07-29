@@ -2,6 +2,7 @@
     height: 100%;
     max-width: 900px;
     margin: auto;
+
     .game-pad {
         height: 100%;
         display: flex;
@@ -9,12 +10,14 @@
         flex-wrap: wrap; // align-items: center
         justify-content: space-between;
         align-content: stretch;
+
         & .lineBreak {
             border: 1px solid blue;
             flex: 1 1 100%;
             height: 1px;
         }
-        &_card {
+
+        .card-container {
             border-radius: .5rem;
             position: relative;
             flex: 1 1 auto;
@@ -24,50 +27,56 @@
             margin: .5rem;
             cursor: pointer;
             padding: .3rem;
+
             &:hover {
                 padding: 0;
-                & .face-up_img {
-                    transform: scale(1.01) translate(-50%, -50%);
-                    transform-origin: left;
-                }
             }
-            &-face {
+
+            .card {
                 height: 100%;
                 width: 100%;
                 transition: all .2s ease-in-out;
                 border-radius: .5rem;
                 position: relative;
-            }
-            .face-down {
+
                 border: 2px solid var(--colorLight);
                 background-image: linear-gradient(transparent, transparent), url(../img/villa.png);
                 background-position: center;
                 background-size: 60%;
                 background-repeat: no-repeat;
                 animation: return .2s cubic-bezier(0.19, 1, 0.22, 1);
-                &_img {
+
+                .logo {
                     display: none;
                 }
+
+                &.face-up {
+                    animation: turn .2s cubic-bezier(0.19, 1, 0.22, 1);
+                    background-image: none;
+                    border: 2px solid var(--light4);
+
+                    & .logo {
+                        @include absCenter;
+                        display: inline;
+                        width: 80%;
+                        height: auto;
+                        fill: var(--light4);
+                        transform: scale(1) translate(-50%, -50%);
+                        transition: all .9s ease-in-out;
+                        animation: turn2 .2s;
+                    }
+                }
+
+                &.match {
+                    animation: match .4s;
+                }
+
+                &.finished {
+                    animation: match 1s ease-in-out infinite;
+                }
             }
-            .face-up {
-                border: 2px solid var(--light4);
-                animation: turn .2s cubic-bezier(0.19, 1, 0.22, 1);
-            }
-            .face-up_img {
-                @include absCenter;
-                width: 80%;
-                height: auto;
-                fill: var(--light4);
-                transform: scale(1) translate(-50%, -50%);
-                transition: all .4s ease-in-out;
-                animation: turn2 .2s;
-            }
-            .match {
-                animation: match .4s;
-            }
-            .finished {
-                animation: finish .4s ease-in-out infinite;
-            }
+
+
         }
     }
 }
@@ -77,15 +86,18 @@
     padding: 1rem 2rem;
     width: 100%;
     color: var(--dark3);
+
     & ul {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: space-around; // border: 1px solid blue;
+
         & :last-child {
             margin-right: 1.5rem !important; // display: inline-block;
         }
     }
+
     font-weight: 400;
     font-size: inherit;
     text-transform: capitalize;
@@ -107,6 +119,7 @@
     animation: pulse .6s cubic-bezier(0.19, 1, 0.22, 1);
     visibility: visible;
     opacity: 1;
+
     & .field {
         height: 100%;
         display: flex;

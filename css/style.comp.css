@@ -12,22 +12,22 @@
   --dark3: #999;
   --dark4: #2e2e2e;
   /*Shadows*/
-  --shadow1: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-  --shadow2: 0 2rem 4rem rgba(0, 0, 0, 0.4);
-  --shadow3: 0 3rem 6rem rgba(0, 0, 0, 0.5);
-  --grid-width: 100%;
-  --gap-V: 2rem;
-  --gap-H: 3rem;
-  --BP1: 850px;
-  --BP2: 660px;
-  --BP3: 590px;
+  --shadow1: 0 1rem 2rem rgba(0, 0, 0, .3);
+  --shadow2: 0 2rem 4rem rgba(0, 0, 0, .4);
+  --shadow3: 0 3rem 6rem rgba(0, 0, 0, .5);
+  --grid-width:100%;
+  --gap-V:2rem;
+  --gap-H:3rem;
+  --BP1:850px;
+  --BP2:660px;
+  --BP3:590px;
   --BP1x: 1200px; }
 
 @keyframes finish {
   0% {
     animation: return 0.2s cubic-bezier(0.19, 1, 0.22, 1); }
   100% {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     animation: turn 0.2s cubic-bezier(0.19, 1, 0.22, 1); } }
 
 @keyframes return {
@@ -181,7 +181,7 @@ body {
       border: 1px solid blue;
       flex: 1 1 100%;
       height: 1px; }
-    .game-table .game-pad_card {
+    .game-table .game-pad .card-container {
       border-radius: .5rem;
       position: relative;
       flex: 1 1 auto;
@@ -191,44 +191,42 @@ body {
       margin: .5rem;
       cursor: pointer;
       padding: .3rem; }
-      .game-table .game-pad_card:hover {
+      .game-table .game-pad .card-container:hover {
         padding: 0; }
-        .game-table .game-pad_card:hover .face-up_img {
-          transform: scale(1.01) translate(-50%, -50%);
-          transform-origin: left; }
-      .game-table .game-pad_card-face {
+      .game-table .game-pad .card-container .card {
         height: 100%;
         width: 100%;
         transition: all .2s ease-in-out;
         border-radius: .5rem;
-        position: relative; }
-      .game-table .game-pad_card .face-down {
+        position: relative;
         border: 2px solid var(--colorLight);
         background-image: linear-gradient(transparent, transparent), url(../img/villa.png);
         background-position: center;
         background-size: 60%;
         background-repeat: no-repeat;
         animation: return 0.2s cubic-bezier(0.19, 1, 0.22, 1); }
-        .game-table .game-pad_card .face-down_img {
+        .game-table .game-pad .card-container .card .logo {
           display: none; }
-      .game-table .game-pad_card .face-up {
-        border: 2px solid var(--light4);
-        animation: turn 0.2s cubic-bezier(0.19, 1, 0.22, 1); }
-      .game-table .game-pad_card .face-up_img {
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        height: auto;
-        fill: var(--light4);
-        transform: scale(1) translate(-50%, -50%);
-        transition: all .4s ease-in-out;
-        animation: turn2 .2s; }
-      .game-table .game-pad_card .match {
-        animation: match .4s; }
-      .game-table .game-pad_card .finished {
-        animation: finish .4s ease-in-out infinite; }
+        .game-table .game-pad .card-container .card.face-up {
+          animation: turn 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+          background-image: none;
+          border: 2px solid var(--light4); }
+          .game-table .game-pad .card-container .card.face-up .logo {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: inline;
+            width: 80%;
+            height: auto;
+            fill: var(--light4);
+            transform: scale(1) translate(-50%, -50%);
+            transition: all .9s ease-in-out;
+            animation: turn2 .2s; }
+        .game-table .game-pad .card-container .card.match {
+          animation: match .4s; }
+        .game-table .game-pad .card-container .card.finished {
+          animation: match 1s ease-in-out infinite; }
 
 .stats {
   position: absolute;
@@ -276,7 +274,7 @@ body {
     transform-origin: center bottom; }
 
 @media screen and (max-width: 390px) and (orientation: portrait) {
-  .game-table .game-pad_card {
+  .game-table .game-pad .card-container {
     width: 6rem; } }
 
 @media (max-width: 570px) {
@@ -284,7 +282,7 @@ body {
     font-size: 1rem; }
   .game-pad {
     padding: 3rem 2rem 2rem 2rem; }
-    .game-pad_card {
+    .game-pad .card-container {
       width: 5rem; } }
 
 @media (min-width: 570px) {
@@ -292,17 +290,17 @@ body {
     font-size: 1rem; }
   .game-pad {
     padding: 3rem 2rem 2rem 2rem; }
-    .game-pad_card {
+    .game-pad .card-container {
       width: 6rem; } }
 
 @media (min-width: 670px) {
-  .game-pad_card {
+  .game-pad .card-container {
     min-height: 7rem;
     width: 7rem;
     margin: .5rem; } }
 
 @media (min-width: 670px) {
-  .game-pad_card {
+  .game-pad .card-container {
     min-height: 7rem;
     width: 7rem;
     margin: .5rem; } }
@@ -328,7 +326,7 @@ body {
       justify-content: space-between;
       align-content: stretch;
       padding: 1.4rem; }
-      .game-table .game-pad_card {
+      .game-table .game-pad .card-container {
         flex: 1 1 auto;
         min-height: 7rem;
         width: 12rem;

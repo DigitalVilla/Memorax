@@ -3,7 +3,7 @@
 @media screen and (max-width: 390px) and (orientation:portrait) {
     .game-table {
         .game-pad {
-            &_card {
+            .card-container {
                 width: 6rem;
             }
         }
@@ -17,7 +17,7 @@
     }
     .game-pad {
         padding: 3rem 2rem 2rem 2rem; // background-color: rgb(219, 219, 219);
-        &_card {
+        .card-container {
             width: 5rem;
         }
     }
@@ -29,7 +29,7 @@
     }
     .game-pad {
         padding: 3rem 2rem 2rem 2rem; // background-color: rgb(74, 190, 127);
-        &_card {
+        .card-container {
             width: 6rem;
         }
     }
@@ -38,7 +38,7 @@
 @media (min-width: 670px) {
     .game-pad {
         // background-color: red;
-        &_card {
+        .card-container {
             min-height: 7rem;
             width: 7rem;
             margin: .5rem;
@@ -49,7 +49,7 @@
 @media (min-width: 670px) {
     .game-pad {
         // background-color: red;
-        &_card {
+        .card-container {
             min-height: 7rem;
             width: 7rem;
             margin: .5rem;
@@ -76,7 +76,7 @@
             justify-content: space-between;
             align-content: stretch;
             padding: 1.4rem;
-            &_card {
+            .card-container {
                 flex: 1 1 auto;
                 min-height: 7rem;
                 width: 12rem;
